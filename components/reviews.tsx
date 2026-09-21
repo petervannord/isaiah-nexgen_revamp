@@ -42,9 +42,9 @@ const reviews = [
     name: "Michael T.",
     date: "March 2025",
     rating: 5,
-    service: "Ceramic Coating",
+    service: "Paint Decontamination and waxing",
     vehicle: "SUV",
-    review: "Absolutely amazing work on my SUV. The ceramic coating looks incredible and the paint has never looked better. Professional service from start to finish.",
+    review: "Absolutely amazing work on my SUV. The polish looks incredible and the paint has never looked better. Professional service from start to finish.",
   },
   {
     id: 5,

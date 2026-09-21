@@ -1,0 +1,43 @@
+<svg width="1200" height="1200" viewBox="0 0 1200 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="1200" fill="#050505"/>
+  <g>
+    <circle cx="600" cy="600" r="485" fill="#050505" stroke="#E0B84C" stroke-width="30"/>
+    <circle cx="600" cy="600" r="440" fill="#050505" stroke="#8D2AE8" stroke-width="26"/>
+    <circle cx="600" cy="600" r="410" fill="#050505" stroke="#E0B84C" stroke-width="4" stroke-dasharray="2 24"/>
+  </g>
+
+  <g opacity="0.9">
+    <path d="M250 595L332 595C342 595 350 603 350 613V650C350 660 342 668 332 668H250C240 668 232 660 232 650V613C232 603 240 595 250 595Z" fill="#8D2AE8"/>
+    <path d="M277 513C318 452 354 418 394 400C433 381 478 381 520 391C561 401 596 419 624 448L674 412C701 434 724 461 743 492L784 470C770 435 749 405 724 379L721 379C679 327 626 289 560 267L507 250C477 241 448 240 416 246L350 268C319 276 289 291 259 316C244 328 231 342 219 356L224 419L277 513Z" fill="#1D1D1D"/>
+    <path d="M386 500H660C698 500 732 517 756 548L789 589C804 607 811 629 811 652V693H383C333 693 292 653 292 603V559C292 529 314 505 342 500H386Z" fill="#39414B"/>
+    <path d="M764 550L821 557C840 559 856 571 865 589L899 658C904 669 902 681 895 690L848 740H717L764 550Z" fill="#2E3135"/>
+    <path d="M451 534H640C658 534 674 548 677 566L681 592H410L414 566C417 548 433 534 451 534Z" fill="#D0D0D0" fill-opacity="0.12"/>
+    <path d="M508 506H589C622 506 649 533 649 566V593H448V566C448 533 475 506 508 506Z" fill="#DDE7F1" fill-opacity="0.12"/>
+    <circle cx="427" cy="692" r="56" fill="#1B1B1B" stroke="#737373" stroke-width="14"/>
+    <circle cx="427" cy="692" r="25" fill="#2B2B2B"/>
+    <circle cx="726" cy="692" r="56" fill="#1B1B1B" stroke="#737373" stroke-width="14"/>
+    <circle cx="726" cy="692" r="25" fill="#2B2B2B"/>
+    <circle cx="626" cy="461" r="18" fill="#1C1C1C"/>
+    <circle cx="546" cy="461" r="18" fill="#1C1C1C"/>
+    <circle cx="716" cy="468" r="14" fill="#1C1C1C"/>
+    <circle cx="448" cy="468" r="14" fill="#1C1C1C"/>
+    <path d="M325 575L225 418C214 401 215 379 228 365L255 338C269 324 291 319 309 327L348 343L373 387L325 575Z" fill="#8D2AE8"/>
+    <path d="M334 355C382 366 420 390 453 427L369 515L284 477L284 421L334 355Z" fill="#2A2A2A"/>
+    <path d="M247 419L302 432L359 399L333 471L236 495L247 419Z" fill="#8D2AE8"/>
+    <path d="M272 420L309 456L341 440L312 478L275 482L272 420Z" fill="#D0D0D0" fill-opacity="0.2"/>
+  </g>
+
+  <g>
+    <path d="M894 428C950 408 1018 416 1066 462C1096 490 1116 523 1126 560L1095 569C1088 524 1063 491 1018 467C971 442 916 437 865 452L894 428Z" fill="#7A2ad5"/>
+    <rect x="850" y="430" width="240" height="40" rx="20" fill="#8D2AE8"/>
+    <rect x="854" y="526" width="232" height="34" rx="17" fill="#B9A5FF" fill-opacity="0.8"/>
+    <path d="M1115 520H1103C1054 520 1015 559 1015 608V615C1015 664 1054 703 1103 703H1115V520Z" fill="#5B5B5B"/>
+    <path d="M1050 565H1146C1175 565 1198 588 1198 617V618C1198 647 1175 670 1146 670H1050V565Z" fill="#2F2F2F"/>
+    <path d="M1002 574L1075 575C1100 576 1121 596 1121 621V623C1121 648 1100 668 1075 668H1002L1002 574Z" fill="#8D2AE8"/>
+    <circle cx="1073" cy="609" r="32" fill="#8D2AE8"/>
+  </g>
+
+  <text x="600" y="815" text-anchor="middle" font-family="Impact, Arial Black, sans-serif" font-size="185" font-weight="900" letter-spacing="-7" fill="#8D2AE8">NEXGEN</text>
+  <text x="600" y="930" text-anchor="middle" font-family="Impact, Arial Black, sans-serif" font-size="180" font-weight="900" letter-spacing="-6" fill="#8D2AE8">AUTO</text>
+  <text x="600" y="1018" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="136" font-style="italic" font-weight="700" fill="#E0B84C">Detailing</text>
+</svg>

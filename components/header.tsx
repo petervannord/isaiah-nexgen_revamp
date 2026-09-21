@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Menu, X, Phone } from "lucide-react"
@@ -32,7 +33,7 @@ export function Header() {
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
+        isScrolled || isMenuOpen
           ? "bg-background/95 backdrop-blur-md border-b border-border shadow-lg"
           : "bg-transparent"
       }`}
@@ -40,15 +41,20 @@ export function Header() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <motion.span
-              className="text-xl md:text-2xl font-bold tracking-tight"
-              whileHover={{ scale: 1.02 }}
+          <Link href="/" className="flex items-center gap-3">
+            <motion.div
+              className="relative h-12 w-12 md:h-16 md:w-16 lg:h-[4.25rem] lg:w-[4.25rem] overflow-hidden rounded-full border border-primary/60 bg-background shadow-[0_0_20px_rgba(141,42,232,0.25)]"
+              whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 400 }}
             >
-              <span className="text-primary">NEX-GEN</span>{" "}
-              <span className="text-foreground">AutoDetail</span>
-            </motion.span>
+              <Image
+                src="/logo.png"
+                alt="Nex-Gen AutoDetail logo"
+                width={68}
+                height={68}
+                className="h-full w-full object-cover"
+              />
+            </motion.div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -100,7 +106,7 @@ export function Header() {
 
           {/* Mobile Menu Button */}
           <motion.button
-            className="md:hidden p-2 text-foreground"
+            className="md:hidden p-2.5 text-foreground"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
             whileTap={{ scale: 0.95 }}
@@ -151,7 +157,7 @@ export function Header() {
                   >
                     <Link
                       href={link.href}
-                      className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors py-2 block"
+                      className="text-base font-medium text-muted-foreground hover:text-primary transition-colors py-3 block"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {link.label}
@@ -160,7 +166,7 @@ export function Header() {
                 ))}
                 <motion.a
                   href="tel:+13309848257"
-                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors py-2"
+                  className="flex items-center gap-2 text-base text-muted-foreground hover:text-primary transition-colors py-3"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.3 }}
@@ -173,7 +179,7 @@ export function Header() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.35 }}
                 >
-                  <Button asChild className="mt-2 w-full">
+                  <Button asChild className="mt-2 h-11 w-full">
                     <Link href="#contact" onClick={() => setIsMenuOpen(false)}>
                       Book Now
                     </Link>

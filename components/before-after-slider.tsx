@@ -14,17 +14,22 @@ const defaultImages: BeforeAfterImage[] = [
   {
     before: "/images/before-1.jpg",
     after: "/images/after-1.jpg",
-    label: "Full Exterior Detail",
+    label: "Full Exterior",
   },
   {
     before: "/images/before-2.jpg",
     after: "/images/after-2.jpg",
-    label: "Interior Restoration",
+    label: "Full Exterior",
   },
   {
-    before: "/images/before-3.jpg",
-    after: "/images/after-3.jpg",
-    label: "Paint Correction",
+    before: "/images/dirty.jpg",
+    after: "/images/clean.jpg",
+    label: "Full Interior",
+  },
+  {
+    before: "/images/vibebef.jpg",
+    after: "/images/vibeaft.jpg",
+    label: "Full Interior",
   },
 ]
 
@@ -100,6 +105,7 @@ function SliderItem({ image, index }: SliderItemProps) {
             fill
             className="object-cover"
             sizes="(max-width: 768px) 100vw, 33vw"
+            loading={image.after === "/images/clean.jpg" ? "eager" : "lazy"}
             draggable={false}
           />
           <div className="absolute bottom-4 right-4 rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground shadow-lg">
@@ -229,7 +235,7 @@ export function BeforeAfterSlider({ images = defaultImages }: BeforeAfterSliderP
         </div>
 
         {/* Slider Grid */}
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 grid-cols-1 md:grid-cols-2">
           {images.map((image, index) => (
             <SliderItem key={index} image={image} index={index} />
           ))}
@@ -242,7 +248,7 @@ export function BeforeAfterSlider({ images = defaultImages }: BeforeAfterSliderP
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <p className="mb-6 text-muted-foreground">
+          <p className="mb-6 text-muted-foreground text-lg md:text-xl lg:text-2xl font-semibold">
             Ready to see your car transformed?
           </p>
           <motion.a

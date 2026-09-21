@@ -38,17 +38,31 @@ export function Contact() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
+
     const form = e.currentTarget
     const formData = new FormData(form)
+    const submission = Object.fromEntries(formData.entries())
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY
+
+    if (!accessKey) {
+      alert("Booking form is not configured yet. Add NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY to your .env.local file.")
+      setIsSubmitting(false)
+      return
+    }
 
     try {
-      const response = await fetch("https://formspree.io/f/mbdqyzgo", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        body: formData,
         headers: {
-          'Accept': 'application/json'
+          "Content-Type": "application/json",
+          Accept: "application/json",
         },
+        body: JSON.stringify({
+          access_key: accessKey,
+          subject: "New vehicle detailing booking request",
+          from_name: `${submission.firstName} ${submission.lastName}`,
+          ...submission,
+        }),
       })
 
       if (response.ok) {

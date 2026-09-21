@@ -7,6 +7,15 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "Terms of Service | Nex-Gen AutoDetail",
   description: "Terms of Service for Nex-Gen AutoDetail. Read our terms and conditions for using our auto detailing services.",
+  alternates: {
+    canonical: "/terms-of-service",
+  },
+  openGraph: {
+    title: "Terms of Service | Nex-Gen AutoDetail",
+    description: "Terms of Service for Nex-Gen AutoDetail. Read our terms and conditions for using our auto detailing services.",
+    url: "https://nexgenautodetail.com/terms-of-service",
+    type: "article",
+  },
 }
 
 export default function TermsOfServicePage() {
@@ -51,13 +60,12 @@ export default function TermsOfServicePage() {
                   2. Services
                 </h2>
                 <p className="mb-4 leading-relaxed text-muted-foreground">
-                  Nex-Gen AutoDetail provides mobile auto detailing services including but not limited to:
+                  Nex-Gen AutoDetail provides premium auto detailing services including but not limited to:
                 </p>
                 <ul className="mb-4 list-disc space-y-2 pl-6 text-muted-foreground">
                   <li>Exterior washing and detailing</li>
                   <li>Interior cleaning and detailing</li>
-                  <li>Ceramic coating application</li>
-                  <li>Paint correction and polishing</li>
+                  <li>Paint decontamination and waxing</li>
                   <li>Engine bay cleaning</li>
                   <li>Headlight restoration</li>
                 </ul>
@@ -104,7 +112,7 @@ export default function TermsOfServicePage() {
                   Payment is due upon completion of services unless otherwise arranged.
                 </p>
                 <p className="mb-4 leading-relaxed text-muted-foreground">
-                  We accept cash, credit cards, and other payment methods as indicated at the time of booking.
+                  We accept cash, online payment, and other payment methods as indicated at the time of booking.
                 </p>
               </section>
 
@@ -149,31 +157,24 @@ export default function TermsOfServicePage() {
                 </h2>
                 <p className="mb-4 leading-relaxed text-muted-foreground">
                   We stand behind our work. If you are not satisfied with our service, please contact us 
-                  within 48 hours of service completion. We will work with you to address any concerns 
-                  and, if necessary, re-perform any portion of the service at no additional charge.
+                  within 48 hours of service completion. 
                 </p>
               </section>
 
-              <section className="mb-10">
-                <h2 className="mb-4 text-xl font-semibold text-foreground">
-                  9. Ceramic Coating Warranty
-                </h2>
-                <p className="mb-4 leading-relaxed text-muted-foreground">
-                  Ceramic coating services come with a warranty as specified at the time of service. 
-                  Warranty coverage requires adherence to recommended maintenance schedules and proper 
-                  care instructions provided at the time of service. Warranty may be voided by:
-                </p>
+              {/* <section className="mb-10">
+              
+             
                 <ul className="mb-4 list-disc space-y-2 pl-6 text-muted-foreground">
                   <li>Use of automatic car washes with brushes</li>
                   <li>Use of harsh chemicals or abrasive cleaning methods</li>
                   <li>Failure to follow maintenance recommendations</li>
                   <li>Physical damage to the coated surfaces</li>
                 </ul>
-              </section>
+              </section> */}
 
               <section className="mb-10">
                 <h2 className="mb-4 text-xl font-semibold text-foreground">
-                  10. Intellectual Property
+                  9. Intellectual Property
                 </h2>
                 <p className="mb-4 leading-relaxed text-muted-foreground">
                   All content on this website, including text, images, logos, and graphics, is the property 
@@ -184,7 +185,7 @@ export default function TermsOfServicePage() {
 
               <section className="mb-10">
                 <h2 className="mb-4 text-xl font-semibold text-foreground">
-                  11. Changes to Terms
+                  10. Changes to Terms
                 </h2>
                 <p className="mb-4 leading-relaxed text-muted-foreground">
                   We reserve the right to modify these Terms of Service at any time. Changes will be 
@@ -195,7 +196,7 @@ export default function TermsOfServicePage() {
 
               <section className="mb-10">
                 <h2 className="mb-4 text-xl font-semibold text-foreground">
-                  12. Governing Law
+                  11. Governing Law
                 </h2>
                 <p className="mb-4 leading-relaxed text-muted-foreground">
                   These Terms of Service shall be governed by and construed in accordance with the laws 
@@ -205,7 +206,7 @@ export default function TermsOfServicePage() {
 
               <section className="mb-10">
                 <h2 className="mb-4 text-xl font-semibold text-foreground">
-                  13. Contact Information
+                  12. Contact Information
                 </h2>
                 <p className="mb-4 leading-relaxed text-muted-foreground">
                   If you have any questions about these Terms of Service, please contact us:

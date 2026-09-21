@@ -1,9 +1,11 @@
 "use client"
 
+import Image from "next/image"
 import Link from "next/link"
 import { Phone, MapPin, Facebook, Instagram } from "lucide-react"
 import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
+import { Music2 } from 'lucide-react';
 
 const quickLinks = [
   { href: "#about", label: "About Us" },
@@ -16,8 +18,8 @@ const quickLinks = [
 const services = [
   "Interior Detailing",
   "Exterior Wash",
-  "Ceramic Coating",
-  "Paint Correction",
+  "Protective Sealant Wax",
+  "Paint Decontamination",
   "Full Makeover",
   "Maintenance Package",
 ]
@@ -36,14 +38,19 @@ export function Footer() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5 }}
           >
-            <Link href="/" className="inline-block mb-4">
-              <motion.span
-                className="text-xl font-bold tracking-tight"
-                whileHover={{ scale: 1.02 }}
+            <Link href="/" className="inline-flex items-center mb-4">
+              <motion.div
+                className="relative h-20 w-20 md:h-24 md:w-24 overflow-hidden rounded-full border border-primary/60 bg-background shadow-[0_0_22px_rgba(141,42,232,0.2)]"
+                whileHover={{ scale: 1.03 }}
               >
-                <span className="text-primary">NEX-GEN</span>{" "}
-                <span className="text-foreground">AutoDetail</span>
-              </motion.span>
+                <Image
+                  src="/logo.png"
+                  alt="Nex-Gen AutoDetail logo"
+                  width={96}
+                  height={96}
+                  className="h-full w-full object-cover"
+                />
+              </motion.div>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6">
               Premium auto detailing services in Trumbull & Mahoning Counties. 
@@ -61,8 +68,8 @@ export function Footer() {
               >
                 <Facebook className="h-5 w-5" />
               </motion.a>
-              {/* <motion.a
-                href="https://instagram.com"
+              <motion.a
+                href="https://www.instagram.com/nexgenautodetail2025?utm_source=qr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors"
@@ -71,7 +78,18 @@ export function Footer() {
                 whileTap={{ scale: 0.95 }}
               >
                 <Instagram className="h-5 w-5" />
-              </motion.a> */}
+              </motion.a>
+           <motion.a
+  href="https://www.tiktok.com/@nexgenautodetailing?is_from_webapp=1&sender_device=pc"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="w-10 h-10 rounded-lg bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors"
+  aria-label="Tiktok"
+  whileHover={{ scale: 1.1, y: -2 }}
+  whileTap={{ scale: 0.95 }}
+>
+  <Music2 className="h-5 w-5" />
+</motion.a>
             </div>
           </motion.div>
 
