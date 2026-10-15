@@ -11,7 +11,9 @@ const BeforeAfterSlider = dynamic(() =>
 )
 const About = dynamic(() => import("@/components/about").then((mod) => mod.About))
 const Pricing = dynamic(() => import("@/components/pricing").then((mod) => mod.Pricing))
-const Reviews = dynamic(() => import("@/components/reviews").then((mod) => mod.Reviews))
+const GoogleReviewsSection = dynamic(() =>
+  import("@/components/GoogleReviewsSection").then((mod) => mod.GoogleReviewsSection)
+)
 const Contact = dynamic(() => import("@/components/contact").then((mod) => mod.Contact))
 
 export const metadata: Metadata = {
@@ -62,7 +64,7 @@ export default function Home() {
         <BeforeAfterSlider />
         <About />
         <Pricing />
-        <Reviews />
+        <GoogleReviewsSection />
         <Contact />
       </main>
       <Footer />

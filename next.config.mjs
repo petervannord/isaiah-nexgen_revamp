@@ -2,6 +2,8 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const canonicalHost = 'nexgenautodetail.com'
+const alternateHost = 'www.nexgenautodetail.com'
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -10,6 +12,16 @@ const nextConfig = {
   },
   images: {
     qualities: [75, 85],
+  },
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: alternateHost }],
+        destination: `https://${canonicalHost}/:path*`,
+        permanent: true,
+      },
+    ]
   },
   async headers() {
     return [
