@@ -4,16 +4,19 @@ import "react-google-reviews/dist/index.css"
 import { ReactGoogleReviews } from "react-google-reviews"
 import { ExternalLink, Star } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { useIsMobile } from "@/hooks/use-mobile"
 
 const FEATURABLE_WIDGET_ID = "d0d9d01b-84f1-463b-8d5a-44ffe0a215ec"
 const LEAVE_REVIEW_URL = "https://www.google.com/search?q=nexgen+auto+detailing&sourceid=chrome&source=chrome.ob&ie=UTF-8&zx=1792085600027#lrd=0x699d3783f6608ac1:0xd7ea0132b0980ec3,3,,,,"
 const VIEW_REVIEWS_URL = "https://www.google.com/search?q=nexgen+auto+detailing&sourceid=chrome&source=chrome.ob&ie=UTF-8&zx=1792085600027#lrd=0x699d3783f6608ac1:0xd7ea0132b0980ec3,1,,,,"
 
 export function GoogleReviewsSection() {
+  const isMobile = useIsMobile()
+
   return (
-    <section id="reviews" className="overflow-hidden py-24 text-white">
+    <section id="reviews" className="overflow-hidden py-16 text-white sm:py-24">
       <div className="container mx-auto px-4">
-        <div className="mx-auto mb-12 max-w-2xl text-center">
+        <div className="mx-auto mb-8 max-w-2xl text-center sm:mb-12">
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-primary">
             Trusted Quality
           </p>
@@ -26,15 +29,17 @@ export function GoogleReviewsSection() {
           </p>
         </div>
 
-        <div className="mx-auto max-w-6xl p-4 sm:p-8">
+        <div className="mx-auto max-w-6xl p-0 sm:p-8">
           <ReactGoogleReviews
             layout="carousel"
             featurableId={FEATURABLE_WIDGET_ID}
             theme="dark"
-            maxItems={3}
+            maxItems={isMobile ? 1 : 3}
+            carouselStyle={{ padding: "0 clamp(0px, 3vw, 40px) 32px" }}
+            carouselBtnDarkClassName="!hidden sm:!flex"
             carouselAutoplay
             carouselSpeed={5000}
-            showDots
+            showDots={false}
             loadingMessage="Loading local reviews..."
             errorMessage="Reviews are temporarily unavailable. Please check back soon."
             loaderSpinnerStyle={{ fill: "var(--primary)" }}
